@@ -1,0 +1,9 @@
+{
+  "name": "fluxo-service",
+  "version": "1.0.0",
+  "description": "Serviço que chama API a cada 15 minutos",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
