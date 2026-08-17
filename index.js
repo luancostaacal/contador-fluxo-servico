@@ -1,6 +1,21 @@
+const http = require("http");
+
 const URL = "http://apihomol.acalhomecenter.com.br:8087/ApiAcal/api/teste/fluxo";
-const TOKEN = "Bearer mO1zXrxpsNesVkiSACigxRBLEdWMccu_-4zjZNuVWLQNJGntPzd_KRGN4Wfh27WB6WV07kuz11WJGiCft64Q_lNO2PTAS_tS3t2_g77uKsoCqBVSBAeNPUbrp8RhQjsEmJi5H8nuOenz8MvGfOhPq4U8hn8O6nv5YXoCQhxBRC_sD12ehCTOAuesk5lVQdqIpy86ovau1vrxQnQiTbp0Visu007duMWrYmOq2raIIQ";  
-const INTERVALO = 5 * 60 * 1000; // 5 minutos
+const TOKEN = "Bearer mO1zXrxpsNesVkiSACigxRBLEdWMccu_-4zjZNuVWLQNJGntPzd_KRGN4Wfh27WB6WV07kuz11WJGiCft64Q_lNO2PTAS_tS3t2_g77uKsoCqBVSBAeNPUbrp8RhQjsEmJi5H8nuOenz8MvGfOhPq4U8hn8O6nv5YXoCQhxBRC_sD12ehCTOAuesk5lVQdqIpy86ovau1vrxQnQiTbp0Visu007duMWrYmOq2raIIQ";
+const INTERVALO = 5 * 60 * 1000;
+
+// Porta exigida pelo Render
+const PORT = process.env.PORT || 10000;
+
+http.createServer((req, res) => {
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify({
+        status: "online",
+        executando: true
+    }));
+}).listen(PORT, () => {
+    console.log(`HTTP ouvindo na porta ${PORT}`);
+});
 
 async function chamarFluxo() {
     const agora = new Date().toLocaleString("pt-BR");
@@ -33,6 +48,5 @@ async function chamarFluxo() {
     console.log("======================================");
 
     await chamarFluxo();
-
     setInterval(chamarFluxo, INTERVALO);
 })();
