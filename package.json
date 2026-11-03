@@ -5,5 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
+  },
+  "dependencies": {
+    "node": "^27.0.0-alpha.0.0.0"
   }
 }
