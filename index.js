@@ -1,6 +1,8 @@
  const http = require("http");
 
-const URL = "http://apihomol.acalhomecenter.com.br:8087/ApiAcal/api/teste/fluxo";
+const URL = "http://api.acalhomecenter.com.br:8086/ApiAcal/api/teste/fluxo";
+//const URL = "http://apihomol.acalhomecenter.com.br:8087/ApiAcal/api/teste/fluxo";
+
 const TOKEN = "Bearer mO1zXrxpsNesVkiSACigxRBLEdWMccu_-4zjZNuVWLQNJGntPzd_KRGN4Wfh27WB6WV07kuz11WJGiCft64Q_lNO2PTAS_tS3t2_g77uKsoCqBVSBAeNPUbrp8RhQjsEmJi5H8nuOenz8MvGfOhPq4U8hn8O6nv5YXoCQhxBRC_sD12ehCTOAuesk5lVQdqIpy86ovau1vrxQnQiTbp0Visu007duMWrYmOq2raIIQ";
 
 const PORT = process.env.PORT || 10000;
